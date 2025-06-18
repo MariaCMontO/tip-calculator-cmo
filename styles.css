@@ -1,6 +1,7 @@
 :root {
     --font-primary: "Space Mono", monospace;
     /* Colors */
+    --Green-300: hsl(172, 33%, 63%);
     --Green-400: hsl(172, 67%, 45%);
     --Green-900: hsl(183, 100%, 15%);
     --Grey-500: hsl(186, 14%, 43%);
@@ -43,6 +44,7 @@ input {
     text-align: end;
     font-family: var(--font-primary);
     font-weight: 700;
+    cursor: pointer;
 }
 
 h1 {
@@ -112,11 +114,6 @@ form {
     transition: color 0.3s ease;
 }
 
-.row-tip button:hover,
-.row-tip button:focus {
-    background-color: var(--Green-400);
-    color: var(--Green-900);
-}
 
 .row-tip input {
     margin-block: 0;
@@ -206,8 +203,30 @@ form {
     font-size: 2rem;
     font-family: var(--font-primary);
     opacity: 0.3;
+    cursor: pointer;
 }
 
-.is-enable.active{
+.is-enable.active {
     opacity: 1;
 }
+
+.is-empty:focus {
+    outline: 2px solid rgb(215, 68, 68);
+}
+
+.row-tip button.active {
+    background-color: var(--Green-400);
+}
+
+/* HOVER/FOCUS */
+.row-tip button:hover,
+.row-tip button:focus,
+.total-tip button:hover {
+    background-color: var(--Green-300);
+    color: var(--Green-900);
+}
+
+input:focus {
+    outline: 2px solid var(--Green-400);
+}
+
