@@ -1,0 +1,213 @@
+:root {
+    --font-primary: "Space Mono", monospace;
+    /* Colors */
+    --Green-400: hsl(172, 67%, 45%);
+    --Green-900: hsl(183, 100%, 15%);
+    --Grey-500: hsl(186, 14%, 43%);
+    --Grey-400: hsl(184, 14%, 56%);
+    --Grey-200: hsl(185, 41%, 84%);
+    --Grey-50: hsl(189, 47%, 97%);
+    --White: hsl(0, 100%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--Grey-200);
+    font-family: var(--font-primary);
+}
+
+p,
+label {
+    font-size: 1.4rem;
+    color: var(--Grey-500);
+    font-weight: 600;
+}
+
+input {
+    border: none;
+    background-color: var(--Grey-50);
+    padding: 1.3rem;
+    inline-size: 100%;
+    color: var(--Green-900);
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    text-align: end;
+    font-family: var(--font-primary);
+    font-weight: 700;
+}
+
+h1 {
+    color: var(--Green-900);
+    letter-spacing: 1rem;
+    font-size: 2.5rem;
+    inline-size: 10rem;
+    margin-inline: auto;
+    text-align: center;
+    word-break: break-word;
+    /* Corta las palabras */
+    margin-block-start: clamp(4rem, 20vw, 15rem);
+    margin-block-end: clamp(3rem, 5vw, 8rem);
+}
+
+.container {
+    background-color: var(--White);
+    inline-size: 100%;
+    block-size: 78.9rem;
+    border-radius: 2rem 2rem 0 0;
+    padding: clamp(2.4rem, 5vw, 3.2rem);
+}
+
+form {
+    padding-inline: clamp(0.85rem, 5vw, 2.4rem);
+}
+
+.bill-label {
+    display: block;
+}
+
+.input-icon {
+    margin-block-start: 1rem;
+    margin-block-end: 3.2rem;
+    position: relative;
+}
+
+.input-icon img {
+    position: absolute;
+    block-size: content;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.row-tip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    margin-block-start: 1.6rem;
+    margin-block-end: 2rem;
+}
+
+
+.row-tip button {
+    border: none;
+    background-color: var(--Green-900);
+    border-radius: 0.5rem;
+    inline-size: 100%;
+    cursor: pointer;
+    color: var(--White);
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    text-align: center;
+    padding-block: 1rem;
+    transition: color 0.3s ease;
+}
+
+.row-tip button:hover,
+.row-tip button:focus {
+    background-color: var(--Green-400);
+    color: var(--Green-900);
+}
+
+.row-tip input {
+    margin-block: 0;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.total-tip {
+    block-size: clamp(25.9rem, 50vw, 41.9rem);
+    background-color: var(--Green-900);
+    border-radius: 1.5rem;
+    inline-size: 100%;
+    padding-inline: clamp(2.3rem, 5vw, 4rem);
+    padding-block-end: clamp(2rem, 5vw, 4rem);
+    padding-block-start: clamp(4rem, 5vw, 6rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+}
+
+.total-tip .row-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total-tip .row-total .price {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    color: var(--Green-400);
+}
+
+.total-tip .row-total .info {
+    color: var(--White);
+    font-size: 1.5rem;
+}
+
+.total-tip .row-total .info span {
+    color: var(--Grey-500);
+    font-size: 1.2rem;
+}
+
+
+/* Media Queries */
+@media (min-width:76.8rem) {
+    .container {
+        inline-size: 92.4rem;
+        margin-inline: auto;
+        block-size: 48.5rem;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 3rem;
+        border-radius: 2rem;
+    }
+
+    form {
+        flex: 1;
+        padding-block: 2.4rem;
+    }
+
+    .total-tip {
+        flex: 1;
+    }
+
+    .row-tip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .total-tip button {
+        margin-top: auto;
+    }
+}
+
+/* Extra classes */
+
+.is-enable {
+    inline-size: 100%;
+    border: none;
+    background-color: var(--Green-400);
+    border-radius: 0.5rem;
+    color: var(--Green-900);
+    text-transform: uppercase;
+    text-align: center;
+    padding-block: 1rem;
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: var(--font-primary);
+    opacity: 0.3;
+}
+
+.is-enable.active{
+    opacity: 1;
+}
