@@ -47,6 +47,15 @@ input {
     cursor: pointer;
 }
 
+input:focus {
+    outline: 2px solid var(--Green-400);
+}
+
+/* hacer que el spinner desaparezca */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 h1 {
     color: var(--Green-900);
     letter-spacing: 1rem;
@@ -114,11 +123,27 @@ form {
     transition: color 0.3s ease;
 }
 
+.row-tip button:hover,
+.row-tip button:focus,
+.total-tip button:hover {
+    background-color: var(--Green-300);
+    color: var(--Green-900);
+}
+
+.row-tip button.active {
+    background-color: var(--Green-400);
+    color: var(--Green-900);
+}
 
 .row-tip input {
     margin-block: 0;
     padding: 1rem;
     font-size: 2rem;
+}
+
+.div-label {
+    display: flex;
+    justify-content: space-between;
 }
 
 .total-tip {
@@ -190,6 +215,7 @@ form {
 
 /* Extra classes */
 
+/* Clase para le boton de reset */
 .is-enable {
     inline-size: 100%;
     border: none;
@@ -203,30 +229,23 @@ form {
     font-size: 2rem;
     font-family: var(--font-primary);
     opacity: 0.3;
-    cursor: pointer;
 }
 
 .is-enable.active {
     opacity: 1;
+    cursor: pointer;
 }
 
-.is-empty:focus {
+/* Clase para resaltar el input y poner un parrafo */
+.is-zero-label {
+    font-size: 1.4rem;
+    color:rgb(215, 68, 68);
+    font-weight: 600;
+}
+
+.is-zero {
     outline: 2px solid rgb(215, 68, 68);
 }
-
-.row-tip button.active {
-    background-color: var(--Green-400);
+.is-zero:focus {
+    outline: 2px solid rgb(215, 68, 68);
 }
-
-/* HOVER/FOCUS */
-.row-tip button:hover,
-.row-tip button:focus,
-.total-tip button:hover {
-    background-color: var(--Green-300);
-    color: var(--Green-900);
-}
-
-input:focus {
-    outline: 2px solid var(--Green-400);
-}
-

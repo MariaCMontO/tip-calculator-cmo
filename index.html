@@ -22,11 +22,13 @@
 
     <div class="container">
 
-      <form>
-        <label for="bill" class="bill-label">Bill</label>
+      <form id="form">
+        <div class="div-label" id="div-label-bill">
+          <label for="bill" class="bill-label">Bill</label>
+        </div>
         <div class="input-icon">
           <img src="/images/icon-dollar.svg" alt="Dollar icon">
-          <input type="text" id="bill" name="bill" placeholder="0">
+          <input type="number" id="bill" name="bill" placeholder="0">
         </div>
 
         <p>
@@ -38,13 +40,14 @@
           <button type="button"> 15%</button>
           <button type="button">25%</button>
           <button type="button">50%</button>
-          <input type="text" placeholder="Custom">
+          <input type="text" placeholder="Custom" id="tip">
         </div>
-
-        <label for="number-people">Number of People</label>
+        <div class="div-label" id="div-label-number-people">
+          <label for="number-people">Number of People</label>
+        </div>
         <div class="input-icon">
           <img src="/images/icon-person.svg" alt="Dollar icon">
-          <input type="text" id="number-people" name="number-people" placeholder="0">
+          <input type="number" id="number-people" name="number-people" placeholder="0">
         </div>
       </form>
 
@@ -52,12 +55,12 @@
 
         <div class="row-total">
           <p class="info">Tip Amount<br><span>/ person</span></p>
-          <p class="price">$0.00</p>
+          <p  id="tip-amount" class="price">$0.00</p>
         </div>
 
         <div class="row-total">
           <p class="info">Total<br> <span>/ person</span></p>
-          <p class="price">$0.00</p>
+          <p id="total" class="price">$0.00</p>
         </div>
 
         <button class="is-enable" type="reset">Reset</button>
